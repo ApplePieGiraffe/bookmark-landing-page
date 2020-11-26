@@ -1,8 +1,10 @@
 .downloads {
     padding: 4rem;
+    margin-bottom: 4rem;
 
     @media only screen and (min-width: 800px) {
         padding: 6rem;
+        margin-bottom: 12.5rem;
     }
 
     &__content-wrapper {

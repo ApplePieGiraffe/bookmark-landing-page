@@ -1,5 +1,6 @@
 .features {
     position: relative;
+    margin-bottom: 8rem;
     padding: 4rem 3rem;
     overflow: hidden;
 
@@ -127,8 +128,7 @@
     }
 
     &__img-wrapper {
-        height: 42rem;
-        margin-bottom: 9rem;
+        height: 36rem;
         padding-right: 2rem;
 
         @media only screen and (min-width: 800px) {

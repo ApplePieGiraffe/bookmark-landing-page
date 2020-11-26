@@ -1,8 +1,14 @@
-// MOBILE NAVIGATION
+// =====================
+// | MOBILE NAVIGATION |
+// =====================
+
+// SELECTORS
 
 const body = document.querySelector('body');
 const header = document.querySelector('.header');
 const menuBtn = document.querySelector('.menu-btn');
+
+// FUNCTIONS
 
 function toggleMobileNav() {
     header.classList.toggle('mobile-nav--active');
@@ -12,18 +18,26 @@ function disableScroll() {
     body.classList.toggle('disable-scroll');
 }
 
+// EVENT LISTENER(S)
+
 menuBtn.addEventListener('click', () => {
     toggleMobileNav();
     disableScroll();
 });
 
-// TABS
+// ========
+// | TABS |
+// ========
+
+// SELECTORS
 
 const featureSection = document.querySelector('.feature');
 const tabs = document.querySelector('.tabs');
 const featureHeading = document.querySelector('.feature__heading');
 const featureDescription = document.querySelector('.feature__description');
 const featureImg = document.querySelector('.feature__img');
+
+// DATA
 
 let features = [
     {
@@ -46,6 +60,8 @@ let features = [
     },
 ];
 
+// FUNCTIONS
+
 function changeTab(index) {
     function changeContent(index) {
         featureHeading.textContent = features[index].heading;
@@ -62,7 +78,7 @@ function changeTab(index) {
     }, 1000);
 }
 
-tabs.addEventListener('click', (e) => {
+function changeTabs(e) {
     for (tab of tabs.children) {
         tab.classList.remove('tabs__tab--active');
     }
@@ -76,22 +92,16 @@ tabs.addEventListener('click', (e) => {
     } else if (e.target.id === 'tab-3') {
         changeTab(2);
     }
+}
+
+// EVENT LISTENERS
+
+tabs.addEventListener('click', (e) => {
+    changeTabs(e);
 });
 
 tabs.addEventListener('keypress', (e) => {
-    for (tab of tabs.children) {
-        tab.classList.remove('tabs__tab--active');
-    }
-
-    e.target.classList.add('tabs__tab--active');
-
     if (e.keyCode === 13) {
-        if (e.target.id === 'tab-1') {
-            changeTab(0);
-        } else if (e.target.id === 'tab-2') {
-            changeTab(1);
-        } else if (e.target.id === 'tab-3') {
-            changeTab(2);
-        }
+        changeTabs(e);
     }
 });

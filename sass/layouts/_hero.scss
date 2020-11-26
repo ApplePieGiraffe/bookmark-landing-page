@@ -1,9 +1,11 @@
 .hero {
     position: relative;
+    margin-bottom: 8rem;
     padding: 4rem 2rem;
     overflow: hidden;
 
     @media only screen and (min-width: 800px) {
+        margin-bottom: 0;
         padding: 7rem 6rem;
         padding-bottom: 6rem;
     }

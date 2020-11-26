@@ -6,7 +6,11 @@ body {
 .heading {
     color: var(--color-very-dark-blue);
     font-weight: 500;
-    line-height: 6.5rem;
+    line-height: 4rem;
+
+    @media only screen and (min-width: 600px) {
+        line-height: 6.5rem;
+    }
 
     &--primary {
         font-size: 3.75rem;

@@ -30,3 +30,9 @@ body {
         overflow: hidden;
     }
 }
+
+// GLOBAL STYLES
+
+*:focus {
+    outline: 3px dashed tomato; 
+}

@@ -48,7 +48,7 @@
     letter-spacing: 0.25px;
     line-height: 3.5rem;
     cursor: pointer;
-    transition: all .3s;
+    transition: all .3s, outline 0s;
 
     @media only screen and (min-width: 800px) {
         padding: 1.25rem 3rem;
