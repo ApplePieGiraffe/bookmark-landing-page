@@ -42,21 +42,24 @@ const featureImg = document.querySelector('.feature__img');
 let features = [
     {
         heading: 'Bookmark in one click',
-        description: 'Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.',
+        description:
+            'Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.',
         imgPath: './img/illustration-features-tab-1.svg',
-        altText: 'dashboard'
+        altText: 'dashboard',
     },
     {
         heading: 'Intelligent search',
-        description: 'Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.',
+        description:
+            'Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.',
         imgPath: './img/illustration-features-tab-2.svg',
-        altText: 'dashboard with magnifying glass'
+        altText: 'dashboard with magnifying glass',
     },
     {
         heading: 'Share your bookmarks',
-        description: 'Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.',
+        description:
+            'Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.',
         imgPath: './img/illustration-features-tab-3.svg',
-        altText: 'people waving to each other'
+        altText: 'people waving to each other',
     },
 ];
 
@@ -105,3 +108,34 @@ tabs.addEventListener('keypress', (e) => {
         changeTabs(e);
     }
 });
+
+// ==================
+// | BUTTON EFFECTS |
+// ==================
+
+const btns = document.querySelectorAll('.btn');
+
+btns.forEach((btn) => {
+    btn.addEventListener('click', function(e) {
+        let boundingBox = e.target.getBoundingClientRect();
+        let x = e.clientX - boundingBox.left;
+        let y = e.clientY - boundingBox.top;
+
+        let ripple = document.createElement('span');
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+        ripple.classList.add('btn__ripple');
+
+        this.appendChild(ripple);
+
+        setTimeout(() => {
+            ripple.remove();
+        }, 800);
+    });
+});
+
+body.addEventListener('mousemove', function(e) {
+    let x 
+});
+
+// console.log(btns);

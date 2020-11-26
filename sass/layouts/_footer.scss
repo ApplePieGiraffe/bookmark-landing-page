@@ -82,12 +82,6 @@
         align-items: center;
 
         svg {
-            cursor: pointer;
-
-            &:not(:last-child) {
-                margin-right: 5rem;
-            }
-
             * {
                 transition: fill .3s;
             }
@@ -95,6 +89,12 @@
             &:hover * {
                 fill: var(--color-soft-red);
             }
+        }
+    }
+
+    &__social-link {
+        &:not(:last-child) {
+            margin-right: 5rem;
         }
     }
 }

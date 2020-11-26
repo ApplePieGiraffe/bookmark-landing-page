@@ -40,6 +40,7 @@
 // ===================
 
 .btn {
+    position: relative;
     border: 2px solid;
     border-radius: 5px;
     padding: 1rem 2rem;
@@ -48,6 +49,7 @@
     letter-spacing: 0.25px;
     line-height: 3.5rem;
     cursor: pointer;
+    overflow: hidden;
     transition: all .3s, outline 0s;
 
     @media only screen and (min-width: 800px) {
@@ -89,6 +91,28 @@
             border-color: var(--color-very-dark-blue);
             background-color: white;
         }
+    }
+
+    &__ripple {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background-color:hsl(231, 69%, 60%);
+        pointer-events: none;
+        animation: fadeOut .8s linear infinite;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: .25;
+    }
+    100% {
+        width: 200px;
+        height: 200px;
+        opacity: 0;
     }
 }
 

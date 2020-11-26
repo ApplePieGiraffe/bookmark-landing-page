@@ -125,6 +125,7 @@ body {
 }
 
 .btn {
+  position: relative;
   border: 2px solid;
   border-radius: 5px;
   padding: 1rem 2rem;
@@ -133,6 +134,7 @@ body {
   letter-spacing: 0.25px;
   line-height: 3.5rem;
   cursor: pointer;
+  overflow: hidden;
   -webkit-transition: all .3s, outline 0s;
   transition: all .3s, outline 0s;
 }
@@ -181,6 +183,43 @@ body {
 .btn--grey:hover {
   border-color: var(--color-very-dark-blue);
   background-color: white;
+}
+
+.btn__ripple {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #5368df;
+  pointer-events: none;
+  -webkit-animation: fadeOut .8s linear infinite;
+          animation: fadeOut .8s linear infinite;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: .25;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: .25;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
 }
 
 .download-card {
@@ -1038,14 +1077,6 @@ body {
           align-items: center;
 }
 
-.footer__social-links svg {
-  cursor: pointer;
-}
-
-.footer__social-links svg:not(:last-child) {
-  margin-right: 5rem;
-}
-
 .footer__social-links svg * {
   -webkit-transition: fill .3s;
   transition: fill .3s;
@@ -1053,6 +1084,10 @@ body {
 
 .footer__social-links svg:hover * {
   fill: var(--color-soft-red);
+}
+
+.footer__social-link:not(:last-child) {
+  margin-right: 5rem;
 }
 
 .header {
