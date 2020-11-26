@@ -1,0 +1,203 @@
+.features {
+    position: relative;
+    padding: 4rem 3rem;
+    overflow: hidden;
+
+    @media only screen and (min-width: 800px) {
+        padding: 7rem 6rem;
+        margin-bottom: 9rem;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 75rem;
+        right: 20vw;
+        width: 100rem;
+        height: 53vw;
+        max-height: 40rem;
+        background-color: var(--color-soft-blue);
+        border-radius: 100rem;
+
+        @media only screen and (min-width: 800px) {
+            top: 61.25rem;
+            right: 55.5vw;
+            width: 200rem;
+            height: 44rem;
+            max-height: initial;
+        }
+    }
+
+    &__content-wrapper {
+        position: relative;
+        max-width: 1104px;
+        margin: 0 auto;
+    }
+
+    &__header {
+        margin: 0 auto;
+        max-width: 64rem;
+        text-align: center;
+
+        @media only screen and (min-width: 800px) {
+            max-width: 68rem;
+        }
+    }
+
+    &__heading {
+        margin-bottom: 2rem;
+    }
+
+    &__description {
+        margin-bottom: 9rem;
+    }
+}
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-bottom: 6rem;
+
+    @media only screen and (min-width: 800px) {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 91.25rem;
+        margin: 0 auto;
+        margin-bottom: 9rem;
+    }
+
+    &__tab {
+        position: relative;
+        text-align: center;
+        border-bottom: 1px solid hsla(231, 58, 55, 0.2);
+        padding: 3rem 0;
+        cursor: pointer;
+        opacity: .5;
+
+        @media only screen and (min-width: 800px) {
+            width: 33.33%;
+            padding: 0;
+            padding-bottom: 4rem;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%);
+            width: 20rem;
+            height: 4px;
+            background-color: white;
+            transition: background-color .3s;
+
+            @media only screen and (min-width: 800px) {
+                width: 100%;
+            }
+        }
+
+        &:first-child {
+            border-top: 1px solid hsla(231, 58, 55, 0.2);
+
+            @media only screen and (min-width: 800px) {
+                border-top: none;
+            }
+        }
+
+        &--active {
+            opacity: 1;
+
+            &::after {
+                background-color: var(--color-soft-red);
+            }
+        }
+    }
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media only screen and (min-width: 800px) {
+        flex-direction: row;
+        align-items: start;
+        height: 50rem;
+    }
+
+    &__img-wrapper {
+        height: 42rem;
+        margin-bottom: 9rem;
+        padding-right: 2rem;
+
+        @media only screen and (min-width: 800px) {
+            flex: 0 1 50%;
+            margin-bottom: 0;
+            min-width: 0;
+            height: auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        min-width: 0;
+        transition: transform 1s, opacity 1s;
+
+        @media only screen and (min-width: 800px) {
+            height: 100%;
+            width: auto;
+            min-width: auto;
+        }
+    }
+
+    &__text-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 64rem;
+        text-align: center;
+        transition: opacity 1s;
+
+        @media only screen and (min-width: 800px) {
+            flex: 1 0 56rem;
+            padding-top: 6rem;
+            padding-left: 8rem;
+            text-align: start;
+            max-width: initial;
+        }
+
+        @media only screen and (min-width: 1200px) {
+            padding-left: 14rem;
+        }
+    }
+
+    &__heading {
+        margin-bottom: 2rem;
+    }
+
+    &__description {
+        margin-bottom: 4rem;
+    }
+
+    &__btn {
+        align-self: center;
+
+        @media only screen and (min-width: 800px) {
+            align-self: start;
+        }
+    }
+}
+
+.fade-out .feature {
+    &__img {
+        transform: translateX(calc(-1 * 50vw));
+        opacity: 0;
+    }
+
+    &__text-wrapper {
+        opacity: 0;
+    }
+}

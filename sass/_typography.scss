@@ -1,0 +1,42 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 2.25rem;
+}
+
+.heading {
+    color: var(--color-very-dark-blue);
+    font-weight: 500;
+    line-height: 6.5rem;
+
+    &--primary {
+        font-size: 3.75rem;
+        letter-spacing: -0.15px;
+        line-height: 5rem;
+
+        @media only screen and (min-width: 800px) {
+            font-size: 6rem;
+            letter-spacing: -0.15px;
+            line-height: 6.5rem;
+        }
+    }
+
+    &--secondary {
+        font-size: 3rem;
+        letter-spacing: -0.08px;
+
+        @media only screen and (min-width: 800px) {
+            font-size: 4rem;
+            letter-spacing: -0.1px;
+        }
+    }
+}
+
+.paragraph {
+    color: var(--color-greyish-blue);
+    font-size: 1.875rem;
+    line-height: 3.5rem;
+
+    @media only screen and (min-width: 800px) {
+        font-size: 2.25rem;
+    }
+}

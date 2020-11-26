@@ -1,0 +1,123 @@
+// ===============
+// | MENU BUTTON |
+// ===============
+
+.menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+
+    &__bar {
+        display: inline-block;
+        width: 2.25rem;
+        height: 3px;
+        background-color: black;
+        transition: all .5s;
+    }
+}
+
+.mobile-nav--active .menu-btn__bar--1 {
+    transform: translate(-1px, 5px) rotate(45deg);
+    background-color: white;
+}
+
+.mobile-nav--active .menu-btn__bar--2 {
+    opacity: 0;
+}
+
+.mobile-nav--active .menu-btn__bar--3 {
+    transform: translate(-1px, -8px) rotate(-45deg);
+    background-color: white;
+}
+
+// ===================
+// | REGULAR BUTTONS |
+// ===================
+
+.btn {
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    font-size: 1.75rem;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    line-height: 3.5rem;
+    cursor: pointer;
+    transition: all .3s;
+
+    @media only screen and (min-width: 800px) {
+        padding: 1.25rem 3rem;
+    }
+
+    &--blue {
+        border-color: var(--color-soft-blue);
+        box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.20012);
+        background-color: var(--color-soft-blue);
+        color: white;
+
+        &:hover {
+            background-color: white;
+            color: var(--color-soft-blue);
+        }
+    }
+
+    &--grey {
+        border-color: hsl(0, 0, 97);
+        box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.20012);
+        background-color: hsl(0, 0, 97);;
+        color: var(--color-very-dark-blue);
+        opacity: .75;
+
+        &:hover {
+            border-color: var(--color-very-dark-blue);
+            background-color: white;
+        }
+    }
+}
+
+// =================
+// | DOWNLOAD CARD |
+// =================
+
+.download-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35rem;
+    height: 46.25rem;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px -5px rgba(73, 93, 207, 0.20012);
+    padding: 3rem;
+    padding-top: 6rem;
+    color: var(--color-very-dark-blue);
+    overflow: hidden;
+
+    &__img {
+        margin-bottom: 4rem;
+    }
+
+    &__heading {
+        margin-bottom: .75rem;
+        font-size: 2.5rem;
+        font-weight: 500;
+        letter-spacing: 0.25px;
+    }
+
+    &__subheading {
+        width: 120%;
+        margin-bottom: 3rem;
+        border-bottom: 4px dotted rgba(73, 93, 207, 0.20012);
+        padding-bottom: 4rem;
+        font-size: 1.875rem;
+        opacity: .5;
+    }
+
+    &__btn {
+        align-self: stretch;
+    }
+}

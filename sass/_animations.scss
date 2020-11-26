@@ -1,0 +1,21 @@
+@keyframes bounce {
+    0% {
+        transform: translate(0) rotate(0);
+    }
+
+    25% {
+        transform: rotate(-1deg);
+    }
+
+    50% {
+        transform: translate(0) rotate(0);
+    }
+
+    75% {
+        transform: rotate(1deg);
+    }
+
+    100% {
+        transform: translate(0) rotate(0);
+    }
+}
