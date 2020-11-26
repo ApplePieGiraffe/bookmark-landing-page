@@ -66,6 +66,18 @@
         }
     }
 
+    &--red {
+        border-color: var(--color-soft-red);
+        box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.20012);
+        background-color: var(--color-soft-red);
+        color: white;
+
+        &:hover {
+            background-color: white;
+            color: var(--color-soft-red);
+        }
+    }
+
     &--grey {
         border-color: hsl(0, 0, 97);
         box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.20012);

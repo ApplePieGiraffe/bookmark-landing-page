@@ -1,0 +1,73 @@
+.cta {
+    background-color: var(--color-soft-blue);
+    padding: 8rem 4rem;
+    color: white;
+    font-weight: 500;
+    line-height: 5rem;
+    text-align: center;
+
+    @media only screen and (min-width: 800px) {
+        padding: 7.25rem 6rem;
+        padding-bottom: 8.5rem;
+    }
+
+    &__content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 442px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__subheading {
+        margin-bottom: 3rem;
+        font-size: 1.625rem;
+        letter-spacing: 5px;
+    }
+
+    &__heading {
+        margin-bottom: 4rem;
+        font-size: 3rem;
+        letter-spacing: -0.1px;
+        line-height: 4rem;
+
+        @media only screen and (min-width: 800px) {
+            font-size: 4rem;
+            line-height: 5rem;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 40rem;
+
+        @media only screen and (min-width: 600px) {
+            flex-direction: row;
+            max-width: initial;
+        }
+    }
+
+    &__input {
+        flex: 1;
+        flex-basis: 6rem;
+        margin-bottom: 2rem;
+        border: none;
+        border-radius: 5px;
+        padding-left: 2.5rem;
+
+        @media only screen and (min-width: 600px) {
+            margin-bottom: 0;
+            margin-right: 2rem;
+        }
+
+        &::placeholder {
+            color: rgba(36, 42, 69, 0.250109);
+            font-size: 1.75rem;
+            letter-spacing: 0.25px;
+            line-height: 4rem;
+        }
+    }
+}

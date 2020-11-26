@@ -128,16 +128,19 @@
     }
 
     &__img-wrapper {
-        height: 36rem;
-        padding-right: 2rem;
+        // height: 36rem;
+        height: 75.7vw;
+        max-height: 54rem;
+        margin-bottom: 4rem;
 
         @media only screen and (min-width: 800px) {
             flex: 0 1 50%;
+            display: flex;
+            justify-content: flex-end;
             margin-bottom: 0;
             min-width: 0;
             height: auto;
-            display: flex;
-            justify-content: flex-end;
+            padding-right: 2rem;
         }
     }
 
