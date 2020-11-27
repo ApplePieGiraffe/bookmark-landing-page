@@ -13,6 +13,7 @@
     &::before {
         content: '';
         position: absolute;
+        z-index: -2;
         top: 10rem;
         left: 20vw;
         width: 100rem;

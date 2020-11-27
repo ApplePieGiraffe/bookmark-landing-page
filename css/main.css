@@ -1157,6 +1157,7 @@ body {
 
 .header {
   position: relative;
+  z-index: 2;
   padding: 5rem 4rem;
 }
 
@@ -1337,7 +1338,7 @@ body {
 .header__nav__social-icons {
   position: absolute;
   left: 50%;
-  bottom: 6rem;
+  bottom: calc(20vh + 4rem);
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
 }
@@ -1370,7 +1371,7 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: 120vh;
     opacity: 1;
     -webkit-transition: opacity .5s;
     transition: opacity .5s;
@@ -1395,6 +1396,7 @@ body {
 .hero::before {
   content: '';
   position: absolute;
+  z-index: -2;
   top: 10rem;
   left: 20vw;
   width: 100rem;
