@@ -239,6 +239,7 @@ body {
   position: fixed;
   right: 4rem;
   bottom: 3rem;
+  opacity: .5;
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
 }
@@ -248,12 +249,26 @@ body {
 }
 
 .attribution__img {
-  width: 6rem;
+  width: 7rem;
   height: auto;
   border-radius: 50%;
   -webkit-box-shadow: 4px 8px 8px -2px rgba(0, 0, 0, 0.2);
           box-shadow: 4px 8px 8px -2px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  -webkit-transition: -webkit-transform .3s ease-out;
+  transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+  transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+}
+
+.attribution__img:hover {
+  -webkit-transform: rotate(-360deg);
+          transform: rotate(-360deg);
+}
+
+.attribution__img:active {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .attribution__message {
@@ -274,6 +289,14 @@ body {
   background: url(../img/bubble.png);
   background-size: contain;
   background-repeat: no-repeat;
+  visibility: hidden;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transform: translate(0, 2rem) rotate(-10deg) scale(0.5);
+          transform: translate(0, 2rem) rotate(-10deg) scale(0.5);
+  opacity: 0;
+  -webkit-transition: all .1s;
+  transition: all .1s;
 }
 
 .attribution__text {
@@ -286,7 +309,30 @@ body {
 }
 
 .attribution__text a {
-  color: #995632;
+  color: #FDFDCC;
+}
+
+.attribution.attribution-active {
+  opacity: 1;
+}
+
+.attribution-active .attribution__img {
+  -webkit-transform: rotate(-360deg);
+          transform: rotate(-360deg);
+}
+
+.attribution-active .attribution__img:active {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.attribution-active .attribution__message {
+  visibility: initial;
+  -webkit-transform: translate(0) rotate(0) scale(1);
+          transform: translate(0) rotate(0) scale(1);
+  opacity: 1;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 body {

@@ -158,3 +158,15 @@ addRippleEffect(loginBtn);
 btns.forEach((btn) => {
     addRippleEffect(btn);
 });
+
+// ===============
+// | ATTRIBUTION |
+// ===============
+
+const attribution = document.querySelector('.attribution');
+const attributionImg = document.querySelector('.attribution__img');
+
+attributionImg.addEventListener('click', () => {
+    attribution.classList.toggle('attribution-active');
+});
+

@@ -168,7 +168,7 @@
     position: fixed;
     right: 4rem;
     bottom: 3rem;
-    // opacity: .4;
+    opacity: .5;
     transition: opacity .3s;
 
     &:hover {
@@ -176,11 +176,20 @@
     }
 
     &__img {
-        width: 6rem;
+        width: 7rem;
         height: auto;
         border-radius: 50%;
         box-shadow: 4px 8px 8px -2px rgba(0, 0, 0, .2);
         cursor: pointer;
+        transition: transform .3s ease-out;
+
+        &:hover {
+            transform: rotate(-360deg);
+        }
+
+        &:active {
+            transform: scale(1.2);
+        }
     }
 
     &__message {
@@ -196,6 +205,12 @@
         background: url(../img/bubble.png);
         background-size: contain;
         background-repeat: no-repeat;
+
+        visibility: hidden;
+        transform-origin: bottom right;
+        transform: translate(0, 2rem) rotate(-10deg) scale(.5);
+        opacity: 0;
+        transition: all .1s;
     }
 
     &__text {
@@ -207,7 +222,26 @@
         text-align: center;
 
         a {
-            color: #995632;
+            color: #FDFDCC;
         }
     }
+}
+
+.attribution.attribution-active {
+    opacity: 1; 
+}
+
+.attribution-active .attribution__img {
+    transform: rotate(-360deg);
+
+    &:active {
+        transform: scale(1.2);
+    }
+}
+
+.attribution-active .attribution__message {
+    visibility: initial;
+    transform: translate(0) rotate(0) scale(1);
+    opacity: 1;
+    transition: all .3s;
 }
