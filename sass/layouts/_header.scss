@@ -110,12 +110,14 @@
             }
 
             &--login {
+                position: relative;
                 display: inline-block;
                 width: 100%;
                 margin-top: 1rem;
                 border: 2px solid white;
                 border-radius: 4px;
                 padding: 1.5rem;
+                overflow: hidden;
 
                 @media only screen and (min-width: 800px) {
                     margin: 0;
@@ -131,6 +133,10 @@
                     &:hover {
                         background-color: white;
                         color: var(--color-soft-red);
+                    }
+
+                    .ripple {
+                        background-color: var(--color-soft-red);
                     }
                 }
             }

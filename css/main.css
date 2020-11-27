@@ -1,46 +1,26 @@
-@-webkit-keyframes bounce {
+@-webkit-keyframes fadeOut {
   0% {
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-  25% {
-    -webkit-transform: rotate(-1deg);
-            transform: rotate(-1deg);
-  }
-  50% {
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-  75% {
-    -webkit-transform: rotate(1deg);
-            transform: rotate(1deg);
+    width: 0;
+    height: 0;
+    opacity: .25;
   }
   100% {
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
+    width: 200px;
+    height: 200px;
+    opacity: 0;
   }
 }
 
-@keyframes bounce {
+@keyframes fadeOut {
   0% {
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-  25% {
-    -webkit-transform: rotate(-1deg);
-            transform: rotate(-1deg);
-  }
-  50% {
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
-  }
-  75% {
-    -webkit-transform: rotate(1deg);
-            transform: rotate(1deg);
+    width: 0;
+    height: 0;
+    opacity: .25;
   }
   100% {
-    -webkit-transform: translate(0) rotate(0);
-            transform: translate(0) rotate(0);
+    width: 200px;
+    height: 200px;
+    opacity: 0;
   }
 }
 
@@ -124,6 +104,16 @@ body {
   background-color: white;
 }
 
+.ripple {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  -webkit-animation: fadeOut .8s linear infinite;
+          animation: fadeOut .8s linear infinite;
+}
+
 .btn {
   position: relative;
   border: 2px solid;
@@ -158,6 +148,10 @@ body {
   color: var(--color-soft-blue);
 }
 
+.btn--blue .ripple {
+  background-color: var(--color-soft-blue);
+}
+
 .btn--red {
   border-color: var(--color-soft-red);
   -webkit-box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.20012);
@@ -169,6 +163,10 @@ body {
 .btn--red:hover {
   background-color: white;
   color: var(--color-soft-red);
+}
+
+.btn--red .ripple {
+  background-color: var(--color-soft-red);
 }
 
 .btn--grey {
@@ -185,41 +183,8 @@ body {
   background-color: white;
 }
 
-.btn__ripple {
-  position: absolute;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background-color: #5368df;
-  pointer-events: none;
-  -webkit-animation: fadeOut .8s linear infinite;
-          animation: fadeOut .8s linear infinite;
-}
-
-@-webkit-keyframes fadeOut {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: .25;
-  }
-  100% {
-    width: 200px;
-    height: 200px;
-    opacity: 0;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: .25;
-  }
-  100% {
-    width: 200px;
-    height: 200px;
-    opacity: 0;
-  }
+.btn--grey .ripple {
+  background-color: var(--color-very-dark-blue);
 }
 
 .download-card {
@@ -1236,12 +1201,14 @@ body {
 }
 
 .header__nav__link--login {
+  position: relative;
   display: inline-block;
   width: 100%;
   margin-top: 1rem;
   border: 2px solid white;
   border-radius: 4px;
   padding: 1.5rem;
+  overflow: hidden;
 }
 
 @media only screen and (min-width: 800px) {
@@ -1261,6 +1228,9 @@ body {
   .header__nav__link--login:hover {
     background-color: white;
     color: var(--color-soft-red);
+  }
+  .header__nav__link--login .ripple {
+    background-color: var(--color-soft-red);
   }
 }
 

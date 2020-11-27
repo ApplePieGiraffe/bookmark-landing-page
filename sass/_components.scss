@@ -35,6 +35,18 @@
     background-color: white;
 }
 
+// ==========
+// | RIPPLE |
+// ==========
+
+.ripple {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: fadeOut .8s linear infinite;
+}
+
 // ===================
 // | REGULAR BUTTONS |
 // ===================
@@ -66,6 +78,10 @@
             background-color: white;
             color: var(--color-soft-blue);
         }
+
+        .ripple {
+            background-color: var(--color-soft-blue);
+        }
     }
 
     &--red {
@@ -77,6 +93,10 @@
         &:hover {
             background-color: white;
             color: var(--color-soft-red);
+        }
+
+        .ripple {
+            background-color: var(--color-soft-red);
         }
     }
 
@@ -91,28 +111,10 @@
             border-color: var(--color-very-dark-blue);
             background-color: white;
         }
-    }
 
-    &__ripple {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        background-color:hsl(231, 69%, 60%);
-        pointer-events: none;
-        animation: fadeOut .8s linear infinite;
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        width: 0;
-        height: 0;
-        opacity: .25;
-    }
-    100% {
-        width: 200px;
-        height: 200px;
-        opacity: 0;
+        .ripple {
+            background-color: var(--color-very-dark-blue);
+        }
     }
 }
 

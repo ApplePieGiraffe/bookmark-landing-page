@@ -1,3 +1,15 @@
+// ==================
+// | PRELOAD IMAGES |
+// ==================
+
+function preloadImg(url) {
+    new Image().src = url;
+}
+
+preloadImg('../img/illustration-features-tab-1.svg');
+preloadImg('../img/illustration-features-tab-2.svg');
+preloadImg('../img/illustration-features-tab-3.svg');
+
 // =====================
 // | MOBILE NAVIGATION |
 // =====================
@@ -109,14 +121,19 @@ tabs.addEventListener('keypress', (e) => {
     }
 });
 
-// ==================
-// | BUTTON EFFECTS |
-// ==================
+// =================
+// | RIPPLE EFFECT |
+// =================
 
+// SELECTORS
+
+const loginBtn = document.querySelector('.header__nav__link--login');
 const btns = document.querySelectorAll('.btn');
 
-btns.forEach((btn) => {
-    btn.addEventListener('click', function(e) {
+// FUNCTION(S)
+
+function addRippleEffect(e) {
+    e.addEventListener('click', (e) => {
         let boundingBox = e.target.getBoundingClientRect();
         let x = e.clientX - boundingBox.left;
         let y = e.clientY - boundingBox.top;
@@ -124,18 +141,20 @@ btns.forEach((btn) => {
         let ripple = document.createElement('span');
         ripple.style.left = `${x}px`;
         ripple.style.top = `${y}px`;
-        ripple.classList.add('btn__ripple');
+        ripple.classList.add('ripple');
 
-        this.appendChild(ripple);
+        e.target.appendChild(ripple);
 
         setTimeout(() => {
             ripple.remove();
         }, 800);
     });
-});
+}
 
-body.addEventListener('mousemove', function(e) {
-    let x 
-});
+// EVENT LISTENERS
 
-// console.log(btns);
+addRippleEffect(loginBtn);
+
+btns.forEach((btn) => {
+    addRippleEffect(btn);
+});
