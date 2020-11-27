@@ -6,9 +6,9 @@ function preloadImg(url) {
     new Image().src = url;
 }
 
-preloadImg('../img/illustration-features-tab-1.svg');
-preloadImg('../img/illustration-features-tab-2.svg');
-preloadImg('../img/illustration-features-tab-3.svg');
+preloadImg('./img/illustration-features-tab-1.svg');
+preloadImg('./img/illustration-features-tab-2.svg');
+preloadImg('./img/illustration-features-tab-3.svg');
 
 // =====================
 // | MOBILE NAVIGATION |
@@ -163,8 +163,8 @@ btns.forEach((btn) => {
 // | ATTRIBUTION |
 // ===============
 
-const pop = new Audio('../audio/pop.mp3');
-const whoosh = new Audio('../audio/whoosh.mp3');
+const pop = new Audio('./audio/pop.mp3');
+const whoosh = new Audio('./audio/whoosh.mp3');
 
 const attribution = document.querySelector('.attribution');
 const attributionImg = document.querySelector('.attribution__img');
