@@ -21,8 +21,8 @@
         border-radius: 100rem;
 
         @media only screen and (min-width: 800px) {
-            top: 25.5rem;
-            left: 64.75vw;
+            top: 24.5rem;
+            left: 64.5vw;
             width: 200rem;
             height: 44rem;
         }
@@ -69,10 +69,11 @@
 
         @media only screen and (min-width: 800px) {
             flex: 1 0 60rem;
-            margin-right: 10rem;
             text-align: start;
             align-items: start;
             justify-content: center;
+            margin-top: -3.5rem;
+            margin-right: 10rem;
             padding: 0;
         }
     }
@@ -87,8 +88,21 @@
     }
 
     &__btn-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        @media only screen and (min-width: 375px) {
+            flex-direction: row;
+        }
+        
         *:first-child {
-            margin-right: 2rem;
+            margin-bottom: 2rem;
+
+            @media only screen and (min-width: 375px) {
+                margin-right: 2rem;
+                margin-bottom: 0;
+            }
         }
     }
 }

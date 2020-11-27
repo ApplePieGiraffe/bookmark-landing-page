@@ -6,7 +6,7 @@
 
     @media only screen and (min-width: 800px) {
         padding: 7rem 6rem;
-        margin-bottom: 9rem;
+        margin-bottom: 10rem;
     }
 
     &::before {
@@ -21,7 +21,7 @@
         border-radius: 100rem;
 
         @media only screen and (min-width: 800px) {
-            top: 61.25rem;
+            top: 60.25rem;
             right: 55.5vw;
             width: 200rem;
             height: 44rem;
@@ -50,7 +50,7 @@
     }
 
     &__description {
-        margin-bottom: 9rem;
+        margin-bottom: 6rem;
     }
 }
 
@@ -78,8 +78,8 @@
 
         @media only screen and (min-width: 800px) {
             width: 33.33%;
-            padding: 0;
-            padding-bottom: 4rem;
+            padding: 4rem 0;
+            padding-top: 2rem;
         }
 
         &::after {

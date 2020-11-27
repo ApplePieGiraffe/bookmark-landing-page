@@ -140,7 +140,7 @@
     }
 
     &__heading {
-        margin-bottom: .75rem;
+        margin-bottom: 1.5rem;
         font-size: 2.5rem;
         font-weight: 500;
         letter-spacing: 0.25px;
@@ -157,5 +157,57 @@
 
     &__btn {
         align-self: stretch;
+    }
+}
+
+// ===============
+// | ATTRIBUTION |
+// ===============
+
+.attribution {
+    position: fixed;
+    right: 4rem;
+    bottom: 3rem;
+    // opacity: .4;
+    transition: opacity .3s;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &__img {
+        width: 6rem;
+        height: auto;
+        border-radius: 50%;
+        box-shadow: 4px 8px 8px -2px rgba(0, 0, 0, .2);
+        cursor: pointer;
+    }
+
+    &__message {
+        position: absolute;
+        top: -20rem;
+        left: -21.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20rem;
+        width: 28rem;
+
+        background: url(../img/bubble.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &__text {
+        width: 14rem;
+        margin-top: -1rem;
+        font-family: 'Patrick Hand', cursive;
+        font-size: 2rem;
+        line-height: 2.25rem;
+        text-align: center;
+
+        a {
+            color: #995632;
+        }
     }
 }
