@@ -163,10 +163,17 @@ btns.forEach((btn) => {
 // | ATTRIBUTION |
 // ===============
 
+const pop = new Audio('../audio/pop.mp3');
+const whoosh = new Audio('../audio/whoosh.mp3');
+
 const attribution = document.querySelector('.attribution');
 const attributionImg = document.querySelector('.attribution__img');
 
 attributionImg.addEventListener('click', () => {
+    if (attribution.classList.contains('attribution-active')) {
+        whoosh.play();
+    } else {
+        pop.play();
+    }
     attribution.classList.toggle('attribution-active');
 });
-
